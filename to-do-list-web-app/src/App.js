@@ -25,7 +25,7 @@ function App() {
       </nav>
       <main className="content">
         <div className="box box1">
-          <li className="text1">nigga</li>
+          <li className="text1">current task:</li>
         </div>
         <div className="box box2">
           <li>
