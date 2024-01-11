@@ -1,6 +1,9 @@
+import React, {useState} from 'react';
+import Calendar  from 'react-calendar';
 import "./App.css";
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   return (
     <div className="app-container">
       <header className="header"></header>
@@ -48,6 +51,10 @@ function App() {
               important objectives instead of simply completing them.
             </p>
           </li>
+        </div>
+        <div className="calendar-container">
+          <li className="text1">Calendar</li>
+          <Calendar onChange={setSelectedDate} value={selectedDate} />
         </div>
       </main>
       <footer className="footer"></footer>
