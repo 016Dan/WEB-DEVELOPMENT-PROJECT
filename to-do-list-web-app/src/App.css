@@ -1,20 +1,71 @@
 
-.app-background {
-  background-color: rgb(243, 239, 177);
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-}
 .nav {
- display: contents;
+ display: flex;
  font-family: Arial, Helvetica, sans-serif;
  font-weight: 10;
  color: black;
 }
+
 .navbar-container {
   display: flex;
+  align-items: center;
 }
 
-.body-box {
- background-color: aliceblue;
+.navbar-links {
+  display: flex; 
+  padding-left: 50px;
+}
+.navbar-logo{
+  padding-left: 5px;
+}
+.navbar-link {
+  list-style: none;
+  padding-left: 180px;
+  font-size: 25px;
+  text-decoration: none;
+}
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  overflow: hidden;
+  background-color: #f5f5dc;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap; 
+  margin-top: 20px; 
+}
+.box {
+  text-decoration: none;
+  border-radius: 50px;
+  margin-right: 10px;
+  margin-left: 5px;
+  padding-bottom: 30rem;
+  background-color: #f5edd3;
+  display: flex;
+}
+.box1 {
+  width: 15rem;
+}
+
+.box2 {
+  width: 62rem;
+}
+.text2 {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: none;
+  text-align: center;
+  font-size: 25px;
+}
+.box h2 {
+  text-align: center;
+  font-weight: bold;
+  padding: 0%;
 }
