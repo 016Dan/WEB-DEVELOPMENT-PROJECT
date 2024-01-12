@@ -54,15 +54,19 @@ li {
   padding: 0%;
 }
 
-.app-nav li {
+<<<<<<< Updated upstream
+/* sdadasdada */
+=======
+ .navbar-links li {
   padding-right: 140px;
   padding-left: 10px;
   font-size: 50px;
   text-decoration: none;
   display: flex;
   color: black;
-}
-
+ }
+ 
 /* sdadasdada */
 /* sdadasdada */
 /* sdadasdada */
+>>>>>>> Stashed changes
