@@ -1,16 +1,14 @@
-
 body {
   overflow: hidden;
   background-color: #f5f5dc;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  
 }
 .content {
   display: flex;
-  flex-wrap: wrap; 
-  margin-top: 20px; 
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 .box {
   text-decoration: none;
@@ -23,29 +21,28 @@ body {
 }
 .box1 {
   width: 17rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .text1 {
   padding-left: 25px;
   padding-right: 25px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-size: 20px;
 }
 
 .box2 {
   width: 62rem;
-  padding-inline:2rem;
+  padding-inline: 2rem;
 }
 .text2 {
   padding-left: 25px;
   padding-right: 25px;
   padding-top: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   font-size: 22px;
-  
 }
 .box h2 {
   text-align: center;
@@ -53,4 +50,6 @@ body {
   padding: 0%;
 }
 
+/* sdadasdada */
+/* sdadasdada */
 /* sdadasdada */
