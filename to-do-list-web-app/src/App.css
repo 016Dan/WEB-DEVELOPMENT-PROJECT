@@ -24,6 +24,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+ul,li{
+  list-style: none;
+}
 .text1 {
   padding-left: 25px;
   padding-right: 25px;
@@ -49,7 +52,28 @@ body {
   font-weight: bold;
   padding: 0%;
 }
+ .navbar-links {
+  display: flex;
+ }
 
+<<<<<<< HEAD
 /* sdadasdada */
 /* sdadasdada */
 /* sdadasdada */
+=======
+<<<<<<< Updated upstream
+/* sdadasdada */
+=======
+ .navbar-links li {
+  padding-right: 140px;
+  padding-left: 10px;
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+ }
+ 
+/* sdadasdada */
+/* sdadasdada */
+/* sdadasdada */
+>>>>>>> Stashed changes
+>>>>>>> UI
