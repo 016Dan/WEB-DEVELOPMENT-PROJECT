@@ -10,6 +10,21 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
+/* Nav */
+
+.app-nav {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  line-height: 2px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Home */
+
 .box {
   text-decoration: none;
   border-radius: 50px;
@@ -37,8 +52,8 @@ li {
 }
 
 .box2 {
-  width: 62rem;
-  padding-inline: 2rem;
+  width: 50rem;
+  padding-inline: 5rem;
 }
 .text2 {
   padding-left: 25px;
@@ -54,17 +69,43 @@ li {
   padding: 0%;
 }
 
-/* sdadasdada */
- .navbar-links li {
-  padding-right: 140px;
-  padding-left: 10px;
-  font-size: 50px;
-  text-decoration: none;
-  display: flex;
-  color: black;
- }
- 
-/* sdadasdada */
-/* sdadasdada */
+.calendar-container {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 238px;
+  margin: 0 1rem;
+  padding-top: 2rem;
+}
+
+.text3 {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 28px;
+}
+
 /* sdadasdada */
 
+/* About Section */
+.content02 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.box2-1 {
+  width: 73.5rem;
+  padding-inline: 5rem;
+}
+
+.text4 {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 20px;
+}

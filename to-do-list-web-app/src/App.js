@@ -9,13 +9,21 @@ import "./App.css";
 
 function App() {
   return (
-     <BrowserRouter>
+    <BrowserRouter>
       <nav className="app-nav">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/tasks">Tasks</Link></li>
-          <li><Link to="/contacts">Contacts</Link></li>
-          <li><Link to="/about">About</Link></li>
+        <ul style={{ display: "flex", justifyContent: "center" }}>
+          <li style={{ marginRight: "20px" }}>
+            <Link to="/">Home</Link>
+          </li>
+          <li style={{ marginRight: "20px" }}>
+            <Link to="/tasks">Tasks</Link>
+          </li>
+          <li style={{ marginRight: "20px" }}>
+            <Link to="/contacts">Contacts</Link>
+          </li>
+          <li style={{ marginRight: '10px' }}>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
       </nav>
       <main className="app-main">
@@ -26,7 +34,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
-          </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
 
 const Home = () => {
+   const [selectedDate, setSelectedDate] = useState(new Date());
   return (
     <div className="app-container">
       <main className="content">
         <div className="box box1">
-          <li className="text1">current task:</li>
         </div>
         <div className="box box2">
           <li>
-            <p className="text2">
+            <p className="text1">
               <h2>Spark your Ikigai: Welcome to Inkigai</h2>
               <br />
               Make use of your Ikigai. Inkigai is purpose fuel, not just tasks.
@@ -28,6 +29,10 @@ const Home = () => {
               important objectives instead of simply completing them.
             </p>
           </li>
+        </div>
+        <div className="calendar-container">
+          <li className="text3">Calendar</li>
+          <Calendar onChange={setSelectedDate} value={selectedDate} />
         </div>
       </main>
       <footer className="footer"></footer>
