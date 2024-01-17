@@ -6,6 +6,7 @@ import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import Orders from "./components/Orders";
 import Account from "./components/Account";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
             <li>
               <Link to="/account">Account</Link>
             </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
           </ul>
         </nav>
 
@@ -37,6 +41,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
