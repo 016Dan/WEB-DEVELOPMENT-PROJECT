@@ -1,41 +1,106 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Tasks from "./components/Tasks";
-import Contacts from "./components/Contacts";
-import About from "./components/About";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
+import Home from "./components/Home";
+import Menu from "./components/Menu";
+import Cart from "./components/Cart";
+import Orders from "./components/Orders";
+import Account from "./components/Account";
+import About from "./components/About";
+import Login from "./components/Login";
 
-function App() {
+const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(false);
+  const [username, setUsername] = useState("");
+
+  const handleLogin = (user) => {
+    setLoggedIn(true);
+    setUsername(user);
+  };
+
+  const handleLogout = () => {
+    setLoggedOut(true);
+    setUsername("");
+  };
+
   return (
-    <BrowserRouter>
-      <nav className="app-nav">
-        <ul style={{ display: "flex", justifyContent: "center" }}>
-          <li style={{ marginRight: "20px" }}>
-            <Link to="/">Home</Link>
-          </li>
-          <li style={{ marginRight: "20px" }}>
-            <Link to="/tasks">Tasks</Link>
-          </li>
-          <li style={{ marginRight: "20px" }}>
-            <Link to="/contacts">Contacts</Link>
-          </li>
-          <li style={{ marginRight: '10px' }}>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
-      <main className="app-main">
+    <Router>
+      <div className="app-container">
+        <nav>
+          {loggedIn && (
+            <ul className="app-nav">
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="/menu">Menu</Link>
+              </li>
+              <li>
+                <Link to="/cart">Cart</Link>
+              </li>
+              <li>
+                <Link to="/orders">Orders</Link>
+              </li>
+              <li>
+                <Link to="/account">Account</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                Welcome, {username}!{" "}
+                <button onClick={handleLogout}>Logout</button>
+              </li>
+            </ul>
+          )}
+        </nav>
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tasks" element={<Tasks />} />
-          <Route path="/contacts" element={<Contacts />} />
+          {/* Redirect to the login page by default */}
+          <Route
+            path="/"
+            element={loggedIn ? <Navigate to="/" /> : <Navigate to="/login" />}
+          />
+          <Route path="/home" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route
+            path="/account"
+            element={loggedIn ? <Account /> : <Navigate to="/login" />}
+          />
           <Route path="/about" element={<About />} />
+          <Route
+            path="/login"
+            element={
+              loggedIn ? (
+                <Navigate to="/Home" />
+              ) : (
+                <Login onLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              loggedOut ? (
+                <Navigate to="/Login" />
+              ) : (
+                <Login onLogout={handleLogout} />
+              )
+            }
+          />
         </Routes>
-      </main>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
