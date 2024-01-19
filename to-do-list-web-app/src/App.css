@@ -32,6 +32,19 @@ nav a {
   margin: 20px auto;
 }
 
+/* Menu Section */
+.menu {
+  padding: 20px;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  flex-grow: 1;
+} 
+
+
 
 
 /* About Section */
