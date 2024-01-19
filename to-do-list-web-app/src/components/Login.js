@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./Login.css"; // Import the stylesheet
+import React, { useState } from "react";
+import "./Login.css";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    // Add a class to the body element when the component mounts
-    document.body.classList.add("login-page");
-
-    // Remove the class when the component unmounts
-    return () => {
-      document.body.classList.remove("login-page");
-    };
-  }, []);
 
   const handleLogin = () => {
     if (username && password) {
