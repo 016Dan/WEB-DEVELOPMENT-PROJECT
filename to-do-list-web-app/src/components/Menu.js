@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Cart";
+import { useNavigate } from "react-router-dom";
 
-const Menu = () => {
-  const [cartItems, setCartItems] = useState([]);
+const Menu = ({ setCartItems }) => {
+  // Added setCartItems prop
+  const navigate = useNavigate();
 
   const handleAddToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    setCartItems((prevCartItems) => [...prevCartItems, item]); // Updated to use previous state
+    navigate("/cart");
   };
+
   const foodItems = [
     {
       id: 1,
       name: "Burger Steak with Rice",
-      description: " Juicy patty, savory gravy, fluffy rice ",
+      description: "Juicy patty, savory gravy, fluffy rice",
       price: 80.0,
     },
     {
@@ -21,54 +23,7 @@ const Menu = () => {
       description: "Crispylicious and Juicylicious Fried Chicken",
       price: 60.0,
     },
-    {
-      id: 3,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 4,
-      name: "Chocolate Chip Cookie",
-      description: "Sweet yet delicious, fresh-baked cookie",
-      price: 10.0,
-    },
-    {
-      id: 5,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 6,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 7,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 8,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 9,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
-    {
-      id: 10,
-      name: "Caldereta with Rice",
-      description: "House-made caldera with saucy sauce with rice",
-      price: 60.0,
-    },
+    // ... (other food items)
   ];
 
   return (
@@ -86,9 +41,6 @@ const Menu = () => {
           </div>
         ))}
       </div>
-      <Link to="/cart">
-        <button>View Cart</button>
-      </Link>
     </section>
   );
 };

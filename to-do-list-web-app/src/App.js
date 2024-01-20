@@ -19,6 +19,7 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loggedOut, setLoggedOut] = useState(false);
   const [username, setUsername] = useState("");
+  const [cartItems, setCartItems] = useState([]); // Added cartItems state
 
   const handleLogin = (user) => {
     setLoggedIn(true);
@@ -63,15 +64,19 @@ const App = () => {
         </nav>
 
         <Routes>
-          {/* Redirect to the login page by default */}
           <Route
             path="/"
             element={loggedIn ? <Navigate to="/" /> : <Navigate to="/login" />}
           />
           <Route path="/home" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route
+            path="/menu"
+            element={<Menu setCartItems={setCartItems} />} // Passed setCartItems as a prop
+          />
+          <Route
+            path="/cart"
+            element={<Cart cartItems={cartItems} />} // Passed cartItems as a prop
+          />
           <Route
             path="/account"
             element={loggedIn ? <Account /> : <Navigate to="/login" />}
