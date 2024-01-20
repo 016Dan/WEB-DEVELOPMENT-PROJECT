@@ -78,6 +78,10 @@ const App = () => {
             element={<Cart cartItems={cartItems} />} // Passed cartItems as a prop
           />
           <Route
+            path="/order"
+            element={<Orders cartItems={cartItems} />} // Passed cartItems as a prop
+          />
+          <Route
             path="/account"
             element={loggedIn ? <Account /> : <Navigate to="/login" />}
           />

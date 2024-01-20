@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react"; 
 import { useNavigate } from "react-router-dom";
 
 const Menu = ({ setCartItems }) => {
-  // Added setCartItems prop
   const navigate = useNavigate();
 
   const handleAddToCart = (item) => {
-    setCartItems((prevCartItems) => [...prevCartItems, item]); // Updated to use previous state
+    setCartItems((prevCartItems) => [
+      ...prevCartItems,
+      { ...item, quantity: 1 },
+    ]);
     navigate("/cart");
   };
-
   const foodItems = [
     {
       id: 1,
@@ -23,7 +24,42 @@ const Menu = ({ setCartItems }) => {
       description: "Crispylicious and Juicylicious Fried Chicken",
       price: 60.0,
     },
-    // ... (other food items)
+    {
+      id: 3,
+      name: "Afritada with Rice",
+      description: "Meaty and saucy top in rice",
+      price: 60.0,
+    },
+    {
+      id: 4,
+      name: "Lumpia with Rice",
+      description: "Crispy deep fried spring rolls",
+      price: 60.0,
+    },
+    {
+      id: 5,
+      name: "Caldereta with Rice",
+      description: "Saucy with a bit of spice pork",
+      price: 60.0,
+    },
+    {
+      id: 6,
+      name: "Sisig with Rice",
+      description: "Crispy pork meat with onions and mayonaise",
+      price: 60.0,
+    },
+    {
+      id: 7,
+      name: "Chocolate Cake",
+      description: "Sweet yet soft chiffon cake filled with chocolate",
+      price: 60.0,
+    },
+    {
+      id: 8,
+      name: "Cookies",
+      description: "Soft and freshly baked chewy chocolate chip cookie",
+      price: 60.0,
+    },
   ];
 
   return (
