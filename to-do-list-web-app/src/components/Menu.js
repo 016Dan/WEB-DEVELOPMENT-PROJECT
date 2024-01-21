@@ -1,5 +1,6 @@
 import React from "react"; 
 import { useNavigate } from "react-router-dom";
+import "./Menu.css";
 
 const Menu = ({ setCartItems }) => {
   const navigate = useNavigate();

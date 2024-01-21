@@ -36,7 +36,7 @@ const App = () => {
       <div className="app-container">
         <nav>
           {loggedIn && (
-            <ul className="app-nav">
+            <li className="app-nav">
               <li>
                 <Link to="/home">Home</Link>
               </li>
@@ -59,7 +59,7 @@ const App = () => {
                 Welcome, {username}!{" "}
                 <button onClick={handleLogout}>Logout</button>
               </li>
-            </ul>
+            </li>
           )}
         </nav>
 
