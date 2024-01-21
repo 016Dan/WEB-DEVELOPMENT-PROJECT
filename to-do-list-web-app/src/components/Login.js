@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
-import "./Login.css"; // Import the stylesheet
+import React, { useState } from "react";
+import "./Login.css";
+import loginImage from "./login.jpg";
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    // Add a class to the body element when the component mounts
-    document.body.classList.add("login-page");
-
-    // Remove the class when the component unmounts
-    return () => {
-      document.body.classList.remove("login-page");
-    };
-  }, []);
-
   const handleLogin = () => {
+    // Perform authentication logic here
+    // For simplicity, just check if both username and password are non-empty
     if (username && password) {
       onLogin(username);
     }
@@ -23,7 +16,10 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <div className="login-box">
+      <div className="image-section">
+        <img src={loginImage} alt="Login" />
+      </div>
+      <div className="login-section">
         <h2>Login</h2>
         <label>
           Username:
@@ -33,6 +29,7 @@ const Login = ({ onLogin }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
+        <br />
         <label>
           Password:
           <input
@@ -41,6 +38,7 @@ const Login = ({ onLogin }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+        <br />
         <button onClick={handleLogin}>Login</button>
       </div>
     </div>
