@@ -52,3 +52,21 @@ body {
 .container {
   max-width: 800px;
 }
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+}

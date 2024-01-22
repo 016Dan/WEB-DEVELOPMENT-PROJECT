@@ -37,7 +37,7 @@ const App = () => {
         <nav>
           {loggedIn && (
             <li className="app-nav">
-              <li>Welcome, {username}! </li>
+              <li>WELCOME {username}! </li>
               <li>
                 <Link to="/home">Home</Link>
               </li>
