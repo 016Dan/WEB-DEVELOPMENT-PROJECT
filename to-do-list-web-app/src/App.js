@@ -14,12 +14,13 @@ import Orders from "./components/Orders";
 import Account from "./components/Account";
 import About from "./components/About";
 import Login from "./components/Login";
+import logoImage from "./logoo.png";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loggedOut, setLoggedOut] = useState(false);
   const [username, setUsername] = useState("");
-  const [cartItems, setCartItems] = useState([]); // Added cartItems state
+  const [cartItems, setCartItems] = useState([]);
 
   const handleLogin = (user) => {
     setLoggedIn(true);
@@ -37,6 +38,10 @@ const App = () => {
         <nav>
           {loggedIn && (
             <li className="app-nav">
+              <div className="logo-section">
+                <img src={logoImage} alt="Logo" />{" "}
+                {/* Corrected variable name */}
+              </div>
               <li>WELCOME {username}! </li>
               <li>
                 <Link to="/home">Home</Link>
