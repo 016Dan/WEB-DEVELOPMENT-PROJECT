@@ -1,9 +1,21 @@
-import React from "react"; 
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 
 const Menu = ({ setCartItems }) => {
   const navigate = useNavigate();
+
+  const [newUserItem, setNewUserItem] = useState({
+    name: "",
+    description: "",
+    price: 0,
+    image: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setNewUserItem((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   const handleAddToCart = (item) => {
     setCartItems((prevCartItems) => [
@@ -12,18 +24,30 @@ const Menu = ({ setCartItems }) => {
     ]);
     navigate("/cart");
   };
-  const foodItems = [
+
+  const addNewFoodItem = (event) => {
+    event.preventDefault();
+
+    if (newUserItem.name && newUserItem.description && newUserItem.price) {
+      setFoodItems((prevItems) => [...prevItems, newUserItem]);
+      setNewUserItem({ name: "", description: "", price: 0, image: "" });
+    } else {
+      console.error("Please fill in all required fields");
+    }
+  };
+
+  const [foodItems, setFoodItems] = useState([
     {
       id: 1,
       name: "Burger Steak with Rice",
       description: "Juicy patty, savory gravy, fluffy rice",
-      price: 80.0,
+      price: 60.0,
     },
     {
       id: 2,
       name: "Fried Chicken with Rice",
       description: "Crispylicious and Juicylicious Fried Chicken",
-      price: 60.0,
+      price: 55.0,
     },
     {
       id: 3,
@@ -35,7 +59,7 @@ const Menu = ({ setCartItems }) => {
       id: 4,
       name: "Lumpia with Rice",
       description: "Crispy deep fried spring rolls",
-      price: 60.0,
+      price: 30.0,
     },
     {
       id: 5,
@@ -47,21 +71,21 @@ const Menu = ({ setCartItems }) => {
       id: 6,
       name: "Sisig with Rice",
       description: "Crispy pork meat with onions and mayonaise",
-      price: 60.0,
+      price: 50.0,
     },
     {
       id: 7,
       name: "Chocolate Cake",
       description: "Sweet yet soft chiffon cake filled with chocolate",
-      price: 60.0,
+      price: 20.0,
     },
     {
       id: 8,
       name: "Cookies",
       description: "Soft and freshly baked chewy chocolate chip cookie",
-      price: 60.0,
+      price: 10.0,
     },
-  ];
+  ]);
 
   return (
     <section className="menu">
@@ -78,6 +102,37 @@ const Menu = ({ setCartItems }) => {
           </div>
         ))}
       </div>
+      {}
+      <h2>Add Your Food Item</h2>
+      <form onSubmit={addNewFoodItem}>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={newUserItem.name}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          value={newUserItem.description}
+          onChange={handleInputChange}
+          required
+        />
+        <label htmlFor="price">Price (Php):</label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          value={newUserItem.price}
+          onChange={handleInputChange}
+          required
+        />
+        <button type="submit">Add to Menu</button>
+      </form>
     </section>
   );
 };
