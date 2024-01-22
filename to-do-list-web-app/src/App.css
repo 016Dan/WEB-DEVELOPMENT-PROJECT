@@ -2,15 +2,15 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
-  margin: 0; 
+  background-color: #faf0e6;
+  margin: 0;
 }
 
 .app-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7d8deb;
+  background-color: #460000;
   padding: 10px;
   color: white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -45,12 +45,10 @@ body {
 .app-nav-user button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
 .container {
   max-width: 800px;
-  margin: 20px auto;
 }
-
