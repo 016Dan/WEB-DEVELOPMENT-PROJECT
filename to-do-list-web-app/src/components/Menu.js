@@ -19,6 +19,19 @@ const Menu = ({ setCartItems }) => {
     setNewUserItem((prevState) => ({ ...prevState, [name]: value }));
   };
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      setNewUserItem((prevState) => ({ ...prevState, image: reader.result }));
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleAddToCart = (item) => {
     setCartItems((prevCartItems) => [
       ...prevCartItems,
@@ -34,9 +47,19 @@ const Menu = ({ setCartItems }) => {
   const addNewFoodItem = (event) => {
     event.preventDefault();
 
-    if (newUserItem.name && newUserItem.description && newUserItem.price) {
+    if (
+      newUserItem.name &&
+      newUserItem.description &&
+      newUserItem.price &&
+      newUserItem.image
+    ) {
       setFoodItems((prevItems) => [...prevItems, newUserItem]);
-      setNewUserItem({ name: "", description: "", price: 0, image: "" });
+      setNewUserItem({
+        name: "",
+        description: "",
+        price: 0,
+        image: "",
+      });
     } else {
       console.error("Please fill in all required fields");
     }
@@ -113,7 +136,7 @@ const Menu = ({ setCartItems }) => {
         <div className="menu-items">
           {foodItems.map((item) => (
             <div key={item.id} className="food-item">
-              <img src={item.imageUrl} alt={item.name} />
+              <img src={item.image} alt={item.name} />
               <h2>{item.name}</h2>
               <p>{item.description}</p>
               <p>Price: Php {item.price}</p>
@@ -180,6 +203,15 @@ const Menu = ({ setCartItems }) => {
             name="price"
             value={newUserItem.price}
             onChange={handleInputChange}
+            required
+          />
+          <label htmlFor="image">Image:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            onChange={handleFileChange}
             required
           />
           <button type="submit">Add to Menu</button>
