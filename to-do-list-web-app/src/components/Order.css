@@ -1,0 +1,147 @@
+/* Orders.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Order History Styles */
+.order-history {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 15px; 
+  text-align: center; 
+  font-style: bold;
+}
+
+.order-history h2 {
+  margin-bottom: 20px;
+}
+
+/* Order Items Styles */
+.order-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.order-confirmed {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #8b2020;
+  background-color: #8b2020;
+  color: white;
+  border-radius: 15px; 
+}
+
+.order-confirmed h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-confirmed p {
+  margin: 10px 0;
+  color: white;
+}
+
+.receipt {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+
+.receipt h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt p {
+  margin: 10px 0;
+}
+
+/* Checkout Form Styles */
+.checkout-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.checkout-form h2 {
+  text-align: center;
+}
+
+.checkout-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-form label {
+  margin: 10px 0;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.checkout-form button {
+  background-color: #8b2020;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-form button:hover {
+  background-color: #8b2020;
+}
+
+/* E-Receipt Styles */
+.receipt {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  color: black;
+}
+
+.receipt h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.receipt p {
+  margin: 10px 0;
+  color: black;
+  font-style: bold;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .checkout-form,
+  .receipt {
+    max-width: 100%;
+  }
+}

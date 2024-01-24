@@ -5,7 +5,7 @@ const About = () => {
   const teamMembers = [
     {
       name: "Edan Raymundo",
-      image: "john.jpg",
+      image: "../src/components/login.jpg",
       description: "BSIT-NS-3A",
     },
     {
