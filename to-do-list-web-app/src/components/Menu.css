@@ -22,8 +22,7 @@
   background-color: white;
 }
 
-.menu-cart,
-.cart-total {
+.menu-cart {
   background-color: black;
   color: white;
   padding: 10px;
@@ -31,7 +30,14 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
-
+.cart-total {
+  background-color: white;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
 .menu form {
   width: 50%;
   margin-top: 30px;
