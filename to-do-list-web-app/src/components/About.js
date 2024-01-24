@@ -9,19 +9,19 @@ const About = () => {
       id: 1,
       name: "Nolly Alvarado",
       role: "Team Member 1",
-      imageUrl: "pusa.jpg", 
+      imageUrl: "member-1.jpg", 
     },
     {
       id: 2,
       name: "Edan Raymundo",
       role: "Team Member 2",
-      imageUrl: "pusa.jpg", 
+      imageUrl: "member-2.jpg", 
     },
     {
       id: 3,
       name: "Jestro de Castro",
       role: "Team Member 3",
-      imageUrl: "pusa.jpg", 
+      imageUrl: "member-3.jpg", 
     },
   ];
 
