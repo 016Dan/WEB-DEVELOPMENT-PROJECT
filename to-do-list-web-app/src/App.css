@@ -81,3 +81,17 @@ nav a {
 li {
   list-style-type: none;
 }
+
+.cart-actions .menu-cart {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: maroon;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-actions .menu-cart:hover {
+  background-color: #444;
+}

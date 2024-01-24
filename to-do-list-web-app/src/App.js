@@ -39,8 +39,7 @@ const App = () => {
           {loggedIn && (
             <li className="app-nav">
               <div className="logo-section">
-                <img src={logoImage} alt="Logo" />{" "}
-                {/* Corrected variable name */}
+                <img src={logoImage} alt="Logo" />
               </div>
               <li>WELCOME {username}! </li>
               <li>
@@ -74,18 +73,9 @@ const App = () => {
             element={loggedIn ? <Navigate to="/" /> : <Navigate to="/login" />}
           />
           <Route path="/home" element={<Home />} />
-          <Route
-            path="/menu"
-            element={<Menu setCartItems={setCartItems} />} // Passed setCartItems as a prop
-          />
-          <Route
-            path="/cart"
-            element={<Cart cartItems={cartItems} />} // Passed cartItems as a prop
-          />
-          <Route
-            path="/order"
-            element={<Orders cartItems={cartItems} />} // Passed cartItems as a prop
-          />
+          <Route path="/menu" element={<Menu setCartItems={setCartItems} />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route path="/orders" element={<Orders cartItems={cartItems} />} />
           <Route
             path="/account"
             element={loggedIn ? <Account /> : <Navigate to="/login" />}
