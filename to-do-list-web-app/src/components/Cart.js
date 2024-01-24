@@ -11,7 +11,7 @@ const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
   };
 
   const handleRemoveFromCartLocal = (item) => {
-    // ... (existing code)
+    onRemoveFromCart(item.id);
   };
 
   const handleCheckboxChange = (item) => {
