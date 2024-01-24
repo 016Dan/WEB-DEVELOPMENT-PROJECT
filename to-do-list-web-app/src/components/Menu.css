@@ -207,10 +207,20 @@
   border-radius: 7px;
   cursor: pointer;
   margin-top: 10px;
-  margin-right: 10px; /* Add margin to the right */
+  margin-right: 10px; 
   transition: background-color 0.3s ease;
 }
 
 .checkout-section button:hover {
   background-color: #444;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+  border-top: 1px solid #555;
+  border-radius: 5px;
 }

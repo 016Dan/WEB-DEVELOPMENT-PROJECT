@@ -54,14 +54,14 @@ const Menu = ({ setCartItems }) => {
     {
       id: 1,
       name: "Burger Steak with Rice",
-      description: "Juicy patty, savory gravy, fluffy rice",
+      description: "Juicy patty with savory gravy",
       price: 60.0,
       imageUrl: "burger.png",
     },
     {
       id: 2,
-      name: "Fried Chicken with Rice",
-      description: "Crispylicious and Juicylicious Fried Chicken",
+      name: "Chicken with Rice",
+      description: "Crispylicious & Juicylicious Chicken",
       price: 55.0,
       imageUrl: "fried chicken.png",
     },

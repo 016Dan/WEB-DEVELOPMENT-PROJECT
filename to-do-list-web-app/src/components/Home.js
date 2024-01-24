@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa"; // Import React icons for Facebook, Instagram, and Email
 import "./Home.css";
 
 const Home = () => {
@@ -51,6 +52,31 @@ const Home = () => {
         <h2>Your Preferences</h2>
         <p>Your current preferences based on the menu:</p>
       </section>
+
+
+      <footer className="social-footer">
+        <h2>Follow Us</h2>
+        <div className="social-icons">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={30} />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={30} />
+          </a>
+          <a href="mailto:your.email@example.com">
+            <FaEnvelope size={30} />
+          </a>
+          <p>&copy; Campus Crave Hub. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };
