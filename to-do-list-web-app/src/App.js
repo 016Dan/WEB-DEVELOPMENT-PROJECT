@@ -32,6 +32,12 @@ const App = () => {
     setUsername("");
   };
 
+  const handleRemoveFromCart = (itemId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== itemId)
+    );
+  };
+
   return (
     <Router>
       <div className="app-container">
@@ -74,7 +80,15 @@ const App = () => {
           />
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu setCartItems={setCartItems} />} />
-          <Route path="/cart" element={<Cart cartItems={cartItems} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cartItems={cartItems}
+                onRemoveFromCart={handleRemoveFromCart}
+              />
+            }
+          />
           <Route path="/orders" element={<Orders cartItems={cartItems} />} />
           <Route
             path="/account"

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Menu.css"; // Assuming you have a separate CSS file for Cart
+import "./Menu.css"; 
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, onRemoveFromCart }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const [updatedCartItems, setUpdatedCartItems] = useState(cartItems);
 
@@ -13,8 +13,10 @@ const Cart = ({ cartItems }) => {
     );
   };
 
-  const handleRemoveFromCart = (item) => {
+  const handleRemoveFromCartLocal = (item) => {
     setUpdatedCartItems(updatedCartItems.filter((i) => i.id !== item.id));
+    // Propagate the removal to the parent component
+    onRemoveFromCart(item.id);
   };
 
   const handleCheckboxChange = (item) => {
@@ -91,7 +93,7 @@ const Cart = ({ cartItems }) => {
                   </button>
                 </div>
                 <p>Price: Php {item.price * item.quantity}</p>
-                <button onClick={() => handleRemoveFromCart(item)}>
+                <button onClick={() => handleRemoveFromCartLocal(item)}>
                   Remove
                 </button>
               </div>

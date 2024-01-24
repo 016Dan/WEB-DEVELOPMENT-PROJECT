@@ -46,7 +46,6 @@ const Orders = ({ cartItems }) => {
     // Display the receipt
     setShowReceipt(true);
 
-    // Add additional logic for finalizing the order, such as sending data to a server, etc.
   };
 
   return (
@@ -115,7 +114,6 @@ const Orders = ({ cartItems }) => {
                   <div className="receipt">
                     <h3>Electronic Receipt</h3>
                     <p>Order Total: Php {calculateOrderTotal()}</p>
-                    {/* Add more receipt details as needed */}
                   </div>
                   </div>
                 </>
