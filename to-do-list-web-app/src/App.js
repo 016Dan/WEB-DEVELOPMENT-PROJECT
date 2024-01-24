@@ -14,7 +14,7 @@ import Orders from "./components/Orders";
 import Account from "./components/Account";
 import About from "./components/About";
 import Login from "./components/Login";
-import logoImage from "./logoo.png";
+import logoImage from "./icon.png";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
