@@ -1,10 +1,11 @@
 // Cart.js
-
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./Menu.css";
 
 const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
   const [selectedItems, setSelectedItems] = useState([]);
+  const navigate = useNavigate();
 
   const handleQuantityChange = (item, event) => {
     // ... (existing code)
@@ -46,6 +47,7 @@ const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
     onProceedToOrder(selectedItems);
     // Clear selectedItems state
     setSelectedItems([]);
+    navigate("/orders");
   };
 
   return (
