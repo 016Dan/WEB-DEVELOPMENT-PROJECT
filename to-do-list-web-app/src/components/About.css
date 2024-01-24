@@ -55,9 +55,7 @@
   border-radius: 5px;
 }
 
-/* Additional Styles for a maroon color scheme */
-
-
 .team-member p {
-  color: #555; /* Darker text color for team member descriptions */
+  color: #555; 
 }
+

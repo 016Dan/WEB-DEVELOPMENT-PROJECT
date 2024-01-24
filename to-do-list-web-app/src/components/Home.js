@@ -13,19 +13,29 @@ const Home = () => {
       <section className="menu-section">
         <h2>Today's Menu</h2>
         <div className="food-item">
-          <img src="food1.jpg" alt="Food 1" />
-          <h3>Food Item 1</h3>
-          <p>Description of Food Item 1.</p>
+          <img src="caldereta.png" alt="Food 1" />
+          <h3>Caldereta</h3>
+          <p>
+            Caldereta is a type of meat stew that is a staple in Filipino
+            cuisine, especially in the Tagalog or Luzon region of the
+            Philippines.
+          </p>
         </div>
         <div className="food-item">
-          <img src="adodo.png" alt="Food 2" />
-          <h3>Food Item 2</h3>
-          <p>Description of Food Item 2.</p>
+          <img src="adobo.png" alt="Food 2" />
+          <h3>Afritada</h3>
+          <p>
+            Afritada is one of many traditional Filipino stews which use a tangy
+            tomato sauce as the key ingredient.
+          </p>
         </div>
         <div className="food-item">
-          <img src="food3.jpg" alt="Food 3" />
-          <h3>Food Item 3</h3>
-          <p>Description of Food Item 3.</p>
+          <img src="sisig.png" alt="Food 3" />
+          <h3>Sisig</h3>
+          <p>
+            The sisig, a delicious Pampanga dish that is now popular
+            nationwide—and abroad.
+          </p>
         </div>
       </section>
 
@@ -40,7 +50,6 @@ const Home = () => {
       <section className="user-section">
         <h2>Your Preferences</h2>
         <p>Your current preferences based on the menu:</p>
-        {/* Add logic here to fetch and display preferences */}
       </section>
     </div>
   );

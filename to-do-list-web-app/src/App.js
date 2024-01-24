@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
@@ -39,11 +33,12 @@ const App = () => {
   };
 
   return (
+
     <Router>
       <div className="app-container">
         <nav>
           {loggedIn && (
-            <li className="app-nav">
+            <div className="app-nav">
               <div className="logo-section">
                 <img src={logoImage} alt="Logo" />
               </div>
@@ -67,9 +62,12 @@ const App = () => {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <button onClick={handleLogout}>Logout</button>
+                {/* Link to the login page with onClick handler */}
+                <Link to="/login" onClick={handleLogout}>
+                  Logout
+                </Link>
               </li>
-            </li>
+            </div>
           )}
         </nav>
 
