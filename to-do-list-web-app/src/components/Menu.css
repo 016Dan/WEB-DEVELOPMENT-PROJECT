@@ -181,3 +181,28 @@
   text-align: center;
   padding: 40px;
 }
+.cart-item label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.checkout-section {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.checkout-section button {
+  background-color: blue;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px; /* Add margin to the right */
+  transition: background-color 0.3s ease;
+}
+
+.checkout-section button:hover {
+  background-color: #444;
+}

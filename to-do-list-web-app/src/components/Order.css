@@ -13,6 +13,10 @@ body {
   padding: 20px;
 }
 
+.checkout-section {
+  text-align: center;
+}
+
 /* Order History Styles */
 .order-history {
   max-width: 400px;
@@ -20,8 +24,8 @@ body {
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
-  border-radius: 15px; 
-  text-align: center; 
+  border-radius: 15px;
+  text-align: center;
   font-style: bold;
 }
 
@@ -43,7 +47,7 @@ body {
   border: 1px solid #8b2020;
   background-color: #8b2020;
   color: white;
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 
 .order-confirmed h2 {
