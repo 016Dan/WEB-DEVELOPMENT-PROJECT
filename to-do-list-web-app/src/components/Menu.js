@@ -48,48 +48,56 @@ const Menu = ({ setCartItems }) => {
       name: "Burger Steak with Rice",
       description: "Juicy patty, savory gravy, fluffy rice",
       price: 60.0,
+      imageUrl: "burger.png",
     },
     {
       id: 2,
       name: "Fried Chicken with Rice",
       description: "Crispylicious and Juicylicious Fried Chicken",
       price: 55.0,
+      imageUrl: "fried chicken.png",
     },
     {
       id: 3,
       name: "Afritada with Rice",
       description: "Meaty and saucy top in rice",
       price: 60.0,
+      imageUrl: "afritada.png",
     },
     {
       id: 4,
       name: "Lumpia with Rice",
       description: "Crispy deep-fried spring rolls",
       price: 30.0,
+      imageUrl: "lumpia.png",
     },
     {
       id: 5,
       name: "Caldereta with Rice",
       description: "Saucy with a bit of spice pork",
       price: 60.0,
+      imageUrl: "caldereta.png",
     },
     {
       id: 6,
       name: "Sisig with Rice",
       description: "Crispy pork meat with onions and mayonnaise",
       price: 50.0,
+      imageUrl: "sisig.png",
     },
     {
       id: 7,
       name: "Chocolate Cake",
       description: "Sweet yet soft chiffon cake filled with chocolate",
       price: 20.0,
+      imageUrl: "cake.png",
     },
     {
       id: 8,
       name: "Cookies",
       description: "Soft and freshly baked chewy chocolate chip cookie",
       price: 10.0,
+      imageUrl: "cookie.png",
     },
   ]);
 
@@ -105,6 +113,7 @@ const Menu = ({ setCartItems }) => {
         <div className="menu-items">
           {foodItems.map((item) => (
             <div key={item.id} className="food-item">
+              <img src={item.imageUrl} alt={item.name} />
               <h2>{item.name}</h2>
               <p>{item.description}</p>
               <p>Price: Php {item.price}</p>

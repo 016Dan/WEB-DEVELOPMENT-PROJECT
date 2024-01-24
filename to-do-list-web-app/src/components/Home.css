@@ -1,9 +1,13 @@
+/* Home.css */
 
 .home-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Arial', sans-serif;
+  background-color: #fff; /* White background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  border-radius: 10px; /* Rounded borders */
 }
 
 header {
@@ -14,6 +18,7 @@ header {
 h1 {
   font-size: 2em;
   margin-bottom: 10px;
+  color: maroon; /* Maroon color */
 }
 
 p {
@@ -29,4 +34,54 @@ p {
 h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+
+.food-item {
+  border: 1px solid #bcbcbc;
+  padding: 15px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.food-item img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.food-item h3 {
+  font-size: 1.2rem;
+  color: maroon;
+}
+
+.food-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+button {
+  background-color: maroon;
+  
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.order-section button:hover {
+  background-color: #000000; 
+}
+
+@media only screen and (max-width: 768px) {
+  .food-item {
+    width: 100%;
+  }
 }
