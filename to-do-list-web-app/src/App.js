@@ -24,6 +24,29 @@ function App() {
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/about" element={<About />} />
+<<<<<<< Updated upstream
+=======
+          <Route
+            path="/login"
+            element={
+              loggedIn ? (
+                <Navigate to="/home" />
+              ) : (
+                <Login onLogin={handleLogin} onLogout={handleLogout} />
+              )
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              loggedOut ? (
+                <Navigate to="/Login" />
+              ) : (
+                <Login onLogout={handleLogout} />
+              )
+            }
+          />
+>>>>>>> Stashed changes
         </Routes>
       </main>
     </BrowserRouter>
