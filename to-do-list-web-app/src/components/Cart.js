@@ -72,27 +72,7 @@ const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
                 <p>
                   <strong>{item.name}</strong>, {item.description}
                 </p>
-                <div className="quantity-counter">
-                  <button
-                    onClick={() =>
-                      handleQuantityChange(item, {
-                        target: { value: item.quantity + 1 },
-                      })
-                    }
-                  >
-                    +
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    onClick={() =>
-                      handleQuantityChange(item, {
-                        target: { value: Math.max(item.quantity - 1, 1) },
-                      })
-                    }
-                  >
-                    -
-                  </button>
-                </div>
+                <p>Quantity: {item.quantity}</p>
                 <p>Price: Php {item.price * item.quantity}</p>
                 <button onClick={() => handleRemoveFromCartLocal(item)}>
                   Remove
