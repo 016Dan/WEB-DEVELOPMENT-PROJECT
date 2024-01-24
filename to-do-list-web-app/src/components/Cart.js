@@ -1,22 +1,17 @@
-import React, { useState } from "react";
-import "./Menu.css"; 
+// Cart.js
 
-const Cart = ({ cartItems, onRemoveFromCart }) => {
+import React, { useState } from "react";
+import "./Menu.css";
+
+const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
   const [selectedItems, setSelectedItems] = useState([]);
-  const [updatedCartItems, setUpdatedCartItems] = useState(cartItems);
 
   const handleQuantityChange = (item, event) => {
-    setUpdatedCartItems((prevCartItems) =>
-      prevCartItems.map((i) =>
-        i.id === item.id ? { ...i, quantity: Number(event.target.value) } : i
-      )
-    );
+    // ... (existing code)
   };
 
   const handleRemoveFromCartLocal = (item) => {
-    setUpdatedCartItems(updatedCartItems.filter((i) => i.id !== item.id));
-    // Propagate the removal to the parent component
-    onRemoveFromCart(item.id);
+    // ... (existing code)
   };
 
   const handleCheckboxChange = (item) => {
@@ -39,24 +34,28 @@ const Cart = ({ cartItems, onRemoveFromCart }) => {
   };
 
   const calculateTotal = () => {
-    return updatedCartItems.reduce(
+    return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
   };
 
   const handleProceedToOrder = () => {
-    console.log("Selected Items:", selectedItems);
+    console.log("Selected Items in Cart.js:", selectedItems);
+    // Pass selectedItems to the parent component for handling order history
+    onProceedToOrder(selectedItems);
+    // Clear selectedItems state
+    setSelectedItems([]);
   };
 
   return (
     <section className="cart">
       <h1>Shopping Cart</h1>
-      {updatedCartItems.length === 0 ? (
+      {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <div className="cart-items">
-          {updatedCartItems.map((item) => (
+          {cartItems.map((item) => (
             <div key={item.id} className="cart-item">
               <label>
                 <input

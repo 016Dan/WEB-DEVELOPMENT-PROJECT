@@ -1,5 +1,13 @@
+// App.js
+
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Menu from "./components/Menu";
@@ -15,6 +23,7 @@ const App = () => {
   const [loggedOut, setLoggedOut] = useState(false);
   const [username, setUsername] = useState("");
   const [cartItems, setCartItems] = useState([]);
+  const [orderHistory, setOrderHistory] = useState([]);
 
   const handleLogin = (user) => {
     setLoggedIn(true);
@@ -32,8 +41,16 @@ const App = () => {
     );
   };
 
-  return (
+  const handleProceedToOrder = (selectedItems) => {
+    console.log("Selected Items in App.js:", selectedItems);
+    // Add selectedItems to the order history
+    setOrderHistory((prevOrderHistory) => [
+      ...prevOrderHistory,
+      ...selectedItems,
+    ]);
+  };
 
+  return (
     <Router>
       <div className="app-container">
         <nav>
@@ -84,10 +101,11 @@ const App = () => {
               <Cart
                 cartItems={cartItems}
                 onRemoveFromCart={handleRemoveFromCart}
+                onProceedToOrder={handleProceedToOrder}
               />
             }
           />
-          <Route path="/orders" element={<Orders cartItems={cartItems} />} />
+          <Route path="/orders" element={<Orders cartItems={orderHistory} />} />
           <Route
             path="/account"
             element={loggedIn ? <Account /> : <Navigate to="/login" />}

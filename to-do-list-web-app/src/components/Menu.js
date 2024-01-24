@@ -1,3 +1,5 @@
+// Menu.js
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Menu.css";
@@ -20,10 +22,17 @@ const Menu = ({ setCartItems }) => {
   };
 
   const handleAddToCart = (item) => {
+    setItemQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [item.id]: itemQuantities[item.id] ? itemQuantities[item.id] + 1 : 1,
+    }));
+
+    // Pass the entire item object along with the updated quantity to setCartItems
     setCartItems((prevCartItems) => [
       ...prevCartItems,
       { ...item, quantity: itemQuantities[item.id] || 1 },
     ]);
+
     // Clear the quantity for the added item
     setItemQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -35,8 +44,7 @@ const Menu = ({ setCartItems }) => {
     event.preventDefault();
 
     if (newUserItem.name && newUserItem.description && newUserItem.price) {
-      setFoodItems((prevItems) => [...prevItems, newUserItem]);
-      setNewUserItem({ name: "", description: "", price: 0, image: "" });
+      // ... (existing code)
     } else {
       console.error("Please fill in all required fields");
     }
