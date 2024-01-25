@@ -20,7 +20,6 @@ import logoImage from "./icon.png";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [loggedOut] = useState(false);
   const [username, setUsername] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [orderHistory, setOrderHistory] = useState([]);
@@ -31,7 +30,7 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    setLoggedIn(false); // Set loggedIn state to false
+    setLoggedIn(false);
     setUsername("");
   };
 
@@ -43,7 +42,6 @@ const App = () => {
 
   const handleProceedToOrder = (selectedItems) => {
     console.log("Selected Items in App.js:", selectedItems);
-    // Add selectedItems to the order history
     setOrderHistory((prevOrderHistory) => [
       ...prevOrderHistory,
       ...selectedItems,
@@ -79,7 +77,6 @@ const App = () => {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                {}
                 <Link to="/login" onClick={handleLogout}>
                   Logout
                 </Link>
@@ -125,17 +122,8 @@ const App = () => {
               loggedIn ? (
                 <Navigate to="/home" />
               ) : (
-                <Login onLogin={handleLogin} onLogout={handleLogout} />
-              )
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              loggedOut ? (
-                <Navigate to="/Login" />
-              ) : (
                 <Login
+                  onLogin={handleLogin}
                   onLogout={handleLogout}
                   onAddFoodItem={Menu.addNewFoodItem}
                 />

@@ -1,8 +1,9 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Home = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
   return (
     <div className="home-container">
       <header>
@@ -52,7 +53,6 @@ const Home = () => {
         <p>Your current preferences based on the menu:</p>
       </section>
 
-
       <footer className="social-footer">
         <h2>Follow Us</h2>
         <div className="social-icons">
@@ -73,8 +73,8 @@ const Home = () => {
           <a href="mailto:your.email@example.com">
             <FaEnvelope size={30} />
           </a>
-          <p>&copy; Campus Crave Hub. All rights reserved.</p>
         </div>
+        <p>&copy; Campus Crave Hub. All rights reserved.</p>
       </footer>
     </div>
   );
