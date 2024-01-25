@@ -9,10 +9,18 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.5",
+<<<<<<< Updated upstream
+=======
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "firebase": "^10.7.2",
+    "mysql": "^2.18.1",
+>>>>>>> Stashed changes
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.3",
+    "react-icons": "^5.0.1",
     "react-query": "^3.39.3",
 <<<<<<< Updated upstream
     "react-router-dom": "^6.21.2",

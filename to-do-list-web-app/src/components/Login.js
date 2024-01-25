@@ -8,6 +8,7 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+<<<<<<< Updated upstream
   const handleLogin = async () => {
     try {
       const response = await fetch("http://localhost:3001/login", {
@@ -27,6 +28,37 @@ const Login = ({ onLogin }) => {
     } catch (error) {
       console.error("Error signing in:", error.message);
     }
+=======
+  const handleLogin = () => {
+    // Perform authentication logic by sending a request to the backend
+    console.log("Sending login request with credentials:", {
+      username,
+      password,
+    });
+
+    fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Login response:", data);
+
+        if (data.success) {
+          // Authentication successful, call the onLogin callback
+          onLogin(username);
+        } else {
+          // Authentication failed, handle accordingly
+          alert("Invalid credentials");
+        }
+      })
+      .catch((error) => {
+        console.error("Login request error:", error);
+      });
+>>>>>>> Stashed changes
   };
 
   const handleSignUpRedirect = () => {

@@ -29,8 +29,57 @@ const Home = () => {
             </p>
           </li>
         </div>
+<<<<<<< Updated upstream
       </main>
       <footer className="footer"></footer>
+=======
+        <div className="food-item">
+          <img src="sisig.png" alt="Food 3" />
+          <h3>Sisig</h3>
+          <p>
+            The sisig, a delicious Pampanga dish that is now popular
+            nationwide—and abroad.
+          </p>
+        </div>
+      </section>
+
+      <section className="order-section">
+        <h2>Place Your Order</h2>
+        <p>Click below to explore the menu and place your order.</p>
+        <Link to="/menu">
+          <button>Click here to place your order</button>
+        </Link>
+      </section>
+
+      <section className="user-section">
+        <h2>Your Preferences</h2>
+        <p>Your current preferences based on the menu:</p>
+      </section>
+
+      <footer className="social-footer">
+        <h2>Follow Us</h2>
+        <div className="social-icons">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={30} />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={30} />
+          </a>
+          <a href="mailto:your.email@example.com">
+            <FaEnvelope size={30} />
+          </a>
+          <p>&copy; Campus Crave Hub. All rights reserved.</p>
+        </div>
+      </footer>
+>>>>>>> Stashed changes
     </div>
   );
 }
