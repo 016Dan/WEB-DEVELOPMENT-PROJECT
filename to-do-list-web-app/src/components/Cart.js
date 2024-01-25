@@ -7,10 +7,6 @@ const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const navigate = useNavigate();
 
-  const handleQuantityChange = (item, event) => {
-    // ... (existing code)
-  };
-
   const handleRemoveFromCartLocal = (item) => {
     onRemoveFromCart(item.id);
   };
