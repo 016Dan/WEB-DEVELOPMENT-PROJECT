@@ -1,7 +1,7 @@
 // About.js
-
 import React from "react";
-import "./About.css"; 
+import { FaFacebook, FaEnvelope } from "react-icons/fa"; // Import Font Awesome icons
+import "./About.css";
 
 const About = () => {
   const teamMembers = [
@@ -9,19 +9,25 @@ const About = () => {
       id: 1,
       name: "Nolly Alvarado",
       role: "Team Member 1",
-      imageUrl: "member-1.jpg", 
+      imageUrl: "member-1.jpg",
+      facebook: "https://www.facebook.com/dino0o0.saur",
+      email: "nolly.alvarado17@gmail.com",
     },
     {
       id: 2,
       name: "Edan Raymundo",
       role: "Team Member 2",
-      imageUrl: "member-2.jpg", 
+      imageUrl: "member-2.jpg",
+      facebook: "https://www.facebook.com/edanfher.raymundo",
+      email: "edanraymundo@gmail.com",
     },
     {
       id: 3,
       name: "Jestro de Castro",
       role: "Team Member 3",
-      imageUrl: "member-3.jpg", 
+      imageUrl: "member-3.jpg",
+      facebook: "https://www.facebook.com/JmDC1923/",
+      email: "jm.decastro38@gmail.com",
     },
   ];
 
@@ -55,6 +61,28 @@ const About = () => {
               <img src={member.imageUrl} alt={member.name} />
               <h3>{member.name}</h3>
               <p>{member.role}</p>
+              <div className="social-icons">
+
+                {member.facebook && (
+                  <a
+                    href={member.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook />
+                  </a>
+                )}
+
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaEnvelope />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
