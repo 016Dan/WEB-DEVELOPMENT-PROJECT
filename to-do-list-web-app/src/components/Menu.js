@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 
-
 const Menu = ({ setCartItems }) => {
   const navigate = useNavigate();
 
@@ -45,13 +44,31 @@ const Menu = ({ setCartItems }) => {
     event.preventDefault();
 
     if (newUserItem.name && newUserItem.description && newUserItem.price) {
+      // Create a new food item object
+      const newFoodItem = {
+        id: foodItems.length + 1,
+        name: newUserItem.name,
+        description: newUserItem.description,
+        price: parseFloat(newUserItem.price),
+        imageUrl: "favicon.ico", // You might want to provide a default image URL
+      };
+
+      // Add the new food item to the menu
+      setFoodItems((prevFoodItems) => [...prevFoodItems, newFoodItem]);
+
+      // Clear the input fields
+      setNewUserItem({
+        name: "",
+        description: "",
+        price: 0,
+        image: "",
+      });
     } else {
       console.error("Please fill in all required fields");
     }
   };
-  
 
-  const [foodItems] = useState([
+  const [foodItems, setFoodItems] = useState([
     {
       id: 1,
       name: "Burger Steak with Rice",
