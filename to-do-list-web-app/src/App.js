@@ -31,9 +31,9 @@ const App = () => {
   };
 
   const handleLogout = () => {
-  setLoggedIn(false); // Set loggedIn state to false
-  setUsername("");
-};
+    setLoggedIn(false); // Set loggedIn state to false
+    setUsername("");
+  };
 
   const handleRemoveFromCart = (itemId) => {
     setCartItems((prevCartItems) =>
@@ -79,7 +79,7 @@ const App = () => {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                {/* Link to the login page with onClick handler */}
+                {}
                 <Link to="/login" onClick={handleLogout}>
                   Logout
                 </Link>

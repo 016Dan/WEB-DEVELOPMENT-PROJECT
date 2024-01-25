@@ -7,8 +7,6 @@ const Login = ({ onLogin }) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    // Perform authentication logic here
-    // For simplicity, just check if both username and password are non-empty
     if (username && password) {
       onLogin(username);
     }

@@ -27,13 +27,11 @@ const Menu = ({ setCartItems }) => {
       [item.id]: itemQuantities[item.id] ? itemQuantities[item.id] + 1 : 1,
     }));
 
-    // Pass the entire item object along with the updated quantity to setCartItems
     setCartItems((prevCartItems) => [
       ...prevCartItems,
       { ...item, quantity: itemQuantities[item.id] || 1 },
     ]);
 
-    // Clear the quantity for the added item
     setItemQuantities((prevQuantities) => ({
       ...prevQuantities,
       [item.id]: undefined,
@@ -44,13 +42,12 @@ const Menu = ({ setCartItems }) => {
     event.preventDefault();
 
     if (newUserItem.name && newUserItem.description && newUserItem.price) {
-      // Create a new food item object
       const newFoodItem = {
         id: foodItems.length + 1,
         name: newUserItem.name,
         description: newUserItem.description,
         price: parseFloat(newUserItem.price),
-        imageUrl: "favicon.ico", // You might want to provide a default image URL
+        imageUrl: "favicon.ico",
       };
 
       // Add the new food item to the menu
@@ -217,7 +214,6 @@ const Menu = ({ setCartItems }) => {
 
 export const getAddNewFoodItem = (setCartItems, setFoodItems) => {
   return (newFoodItem) => {
-    // Handle the addition of the new food item
     setFoodItems((prevFoodItems) => [...prevFoodItems, newFoodItem]);
   };
 };

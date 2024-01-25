@@ -15,12 +15,12 @@ h2 {
 
 .form-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column; /* Change to column to center elements vertically */
+  align-items: center; /* Center items horizontally */
 }
 
 form {
-  width: 48%;
+  width: 100%; /* Set form width to 100% */
   margin-bottom: 30px;
   text-align: left;
 }
@@ -59,7 +59,7 @@ button:hover {
 }
 
 .logout-btn {
-  width: 0%;
+  width: 100%; /* Adjust width as needed */
   background-color: #990000;
 }
 
