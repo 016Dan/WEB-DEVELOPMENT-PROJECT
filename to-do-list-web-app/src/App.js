@@ -20,7 +20,7 @@ import logoImage from "./icon.png";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [loggedOut, setLoggedOut] = useState(false);
+  const [loggedOut] = useState(false);
   const [username, setUsername] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [orderHistory, setOrderHistory] = useState([]);
@@ -31,9 +31,9 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    setLoggedOut(true);
-    setUsername("");
-  };
+  setLoggedIn(false); // Set loggedIn state to false
+  setUsername("");
+};
 
   const handleRemoveFromCart = (itemId) => {
     setCartItems((prevCartItems) =>
@@ -91,7 +91,9 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={loggedIn ? <Navigate to="/" /> : <Navigate to="/login" />}
+            element={
+              loggedIn ? <Navigate to="/home" /> : <Navigate to="/login" />
+            }
           />
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu setCartItems={setCartItems} />} />
@@ -108,16 +110,22 @@ const App = () => {
           <Route path="/orders" element={<Orders cartItems={orderHistory} />} />
           <Route
             path="/account"
-            element={loggedIn ? <Account /> : <Navigate to="/login" />}
+            element={
+              loggedIn ? (
+                <Account onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
           <Route path="/about" element={<About />} />
           <Route
             path="/login"
             element={
               loggedIn ? (
-                <Navigate to="/Home" />
+                <Navigate to="/home" />
               ) : (
-                <Login onLogin={handleLogin} />
+                <Login onLogin={handleLogin} onLogout={handleLogout} />
               )
             }
           />
@@ -127,7 +135,10 @@ const App = () => {
               loggedOut ? (
                 <Navigate to="/Login" />
               ) : (
-                <Login onLogout={handleLogout} />
+                <Login
+                  onLogout={handleLogout}
+                  onAddFoodItem={Menu.addNewFoodItem}
+                />
               )
             }
           />

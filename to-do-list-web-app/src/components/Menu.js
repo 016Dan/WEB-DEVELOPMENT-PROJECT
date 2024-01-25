@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Menu.css";
 
+
 const Menu = ({ setCartItems }) => {
   const navigate = useNavigate();
 
@@ -44,13 +45,13 @@ const Menu = ({ setCartItems }) => {
     event.preventDefault();
 
     if (newUserItem.name && newUserItem.description && newUserItem.price) {
-      // ... (existing code)
     } else {
       console.error("Please fill in all required fields");
     }
   };
+  
 
-  const [foodItems, setFoodItems] = useState([
+  const [foodItems] = useState([
     {
       id: 1,
       name: "Burger Steak with Rice",
@@ -195,6 +196,13 @@ const Menu = ({ setCartItems }) => {
       </section>
     </>
   );
+};
+
+export const getAddNewFoodItem = (setCartItems, setFoodItems) => {
+  return (newFoodItem) => {
+    // Handle the addition of the new food item
+    setFoodItems((prevFoodItems) => [...prevFoodItems, newFoodItem]);
+  };
 };
 
 export default Menu;
