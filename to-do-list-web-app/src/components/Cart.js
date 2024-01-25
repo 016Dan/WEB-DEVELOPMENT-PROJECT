@@ -1,51 +1,79 @@
 // Cart.js
-
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import "./Menu.css";
 
-const Cart = ({ cartItems }) => {
-  const [updatedCartItems, setUpdatedCartItems] = useState(cartItems); // Create a local state for cart management
+const Cart = ({ cartItems, onRemoveFromCart, onProceedToOrder }) => {
+  const [selectedItems, setSelectedItems] = useState([]);
+  const navigate = useNavigate();
 
-  const handleQuantityChange = (item, event) => {
-    setUpdatedCartItems((prevCartItems) =>
-      prevCartItems.map((i) =>
-        i.id === item.id ? { ...i, quantity: Number(event.target.value) } : i
-      )
-    );
+  const handleRemoveFromCartLocal = (item) => {
+    onRemoveFromCart(item.id);
   };
 
-  const handleRemoveFromCart = (item) => {
-    setUpdatedCartItems(updatedCartItems.filter((i) => i.id !== item.id));
+  const handleCheckboxChange = (item) => {
+    setSelectedItems((prevSelectedItems) => {
+      const itemIndex = prevSelectedItems.findIndex(
+        (selectedItem) => selectedItem.id === item.id
+      );
+
+      if (itemIndex !== -1) {
+        // Item already selected, remove it
+        return [
+          ...prevSelectedItems.slice(0, itemIndex),
+          ...prevSelectedItems.slice(itemIndex + 1),
+        ];
+      } else {
+        // Item not selected, add it
+        return [...prevSelectedItems, item];
+      }
+    });
   };
 
   const calculateTotal = () => {
-    return updatedCartItems.reduce(
+    return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
   };
 
+  const handleProceedToOrder = () => {
+    console.log("Selected Items in Cart.js:", selectedItems);
+    // Pass selectedItems to the parent component for handling order history
+    onProceedToOrder(selectedItems);
+    // Clear selectedItems state
+    setSelectedItems([]);
+    navigate("/orders");
+  };
+
   return (
     <section className="cart">
       <h1>Shopping Cart</h1>
-      {updatedCartItems.length === 0 ? (
+      {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <div className="cart-items">
-          {updatedCartItems.map((item) => (
+          {cartItems.map((item) => (
             <div key={item.id} className="cart-item">
-              <h2>{item.name}</h2>
-              <p>{item.description}</p>
-              <p>
-                Quantity:{" "}
+              <label>
                 <input
-                  type="number"
-                  value={item.quantity}
-                  min={1}
-                  onChange={(e) => handleQuantityChange(item, e)}
+                  type="checkbox"
+                  checked={selectedItems.some(
+                    (selectedItem) => selectedItem.id === item.id
+                  )}
+                  onChange={() => handleCheckboxChange(item)}
                 />
-              </p>
-              <p>Price: Php {item.price * item.quantity}</p>
-              <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
+              </label>
+              <div>
+                <p>
+                  <strong>{item.name}</strong>, {item.description}
+                </p>
+                <p>Quantity: {item.quantity}</p>
+                <p>Price: Php {item.price * item.quantity}</p>
+                <button onClick={() => handleRemoveFromCartLocal(item)}>
+                  Remove
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -53,7 +81,9 @@ const Cart = ({ cartItems }) => {
       <div className="cart-total">
         <p>Total: Php {calculateTotal()}</p>
       </div>
-      {/* Add checkout or other actions here */}
+      <div className="checkout-section">
+        <button onClick={handleProceedToOrder}>Proceed to Order</button>
+      </div>
     </section>
   );
 };

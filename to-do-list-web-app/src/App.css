@@ -1,21 +1,85 @@
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f5f5f5; /* Use a light background color */
+  font-family: "Poppins", sans-serif;
+  background-color: #faf0e6;
+  margin: 0;
 }
 
 .app-nav {
-  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8b0000; 
   padding: 10px;
   color: white;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-nav ul {
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section img {
+  width: 50px;
+  height: auto;
+}
+
+.app-nav-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+}
+
+.app-nav-list li {
+  margin-right: 20px;
+}
+
+.app-nav-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.app-nav-list a:hover {
+  color: #ffb400;
+}
+
+.app-nav-user {
+  display: flex;
+  align-items: center;
+}
+
+.app-nav-user span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.app-nav-user button {
+  background-color: transparent;
+  border: 1px solid #ffb400; 
+  color: #ffb400; 
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-nav-user button:hover {
+  background-color: #a0292b; 
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+nav ul {
+  list-style-type: none;
 }
 
 nav li {
@@ -26,50 +90,61 @@ nav a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.container {
-  max-width: 800px;
-  margin: 20px auto;
+nav a:hover {
+  color: #a0292b; 
 }
 
-/* Menu & Cart Section */
-.menu,
-.cart {
-  padding: 20px;
+li {
+  list-style-type: none;
 }
 
-.menu-items,
-.cart-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  flex-grow: 1;
+.cart-actions .menu-cart {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8b0000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.food-item,
-.cart-item {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-  border-radius: 10px; /* Add border-radius for softened edges */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+.cart-actions .menu-cart:hover {
+  background-color: #a0292b; 
 }
 
-.menu-cart,
+.cart-total p {
+  font-weight: bold;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: transparent;
+}
+
 .cart-total {
-  background-color: #4caf50; /* Highlight color */
+  background-color: white;
   color: white;
   padding: 10px;
-  border-radius: 5px; /* Add border-radius for softened edges */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-  margin-top: 20px; /* Add margin to separate from items */
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-/* About Section */
-.text-3 {
-  text-align: center;
-  font-size: 20px;
-  line-height: 35px;
-  margin: 50px;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .app-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-nav-list {
+    margin-top: 10px;
+  }
+
+  .app-nav-user {
+    margin-top: 10px;
+  }
 }

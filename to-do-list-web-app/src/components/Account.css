@@ -1,0 +1,83 @@
+/* Account.css */
+
+.account-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #800000;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* Change to column to center elements vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+form {
+  width: 100%; /* Set form width to 100% */
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+textarea,
+input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #800000;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #800000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #600000;
+}
+
+.logout-btn {
+  width: 100%; /* Adjust width as needed */
+  background-color: #990000;
+}
+
+.logout-btn:hover {
+  background-color: #770000;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    flex-direction: column;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  textarea,
+  input {
+    width: calc(100% - 24px);
+  }
+}
